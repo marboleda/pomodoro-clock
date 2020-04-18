@@ -4,6 +4,7 @@ const stopButton = document.querySelector("#stop-button");
 const startButton = document.querySelector("#start-button");
 const resetButton = document.querySelector("#reset-button");
 const increaseSessionButton = document.querySelector("#increase-session-minutes");
+const decreaseSessionButton = document.querySelector("#decrease-session-minutes");
 const sessionDisplay = document.querySelector("#session-time");
 const timeDisplay = document.querySelector("#time");
 let isBreakTime = false;
@@ -70,6 +71,13 @@ resetButton.addEventListener("click", function(e) {
 increaseSessionButton.addEventListener("click", function(e) {
     workTime++;
     sessionDisplay.textContent = workTime;
+});
+
+decreaseSessionButton.addEventListener("click", function(e) {
+    if (workTime > 1) {
+        workTime--;
+        sessionDisplay.textContent = workTime;
+    }
 })
 
 startTimer(25, 0);
