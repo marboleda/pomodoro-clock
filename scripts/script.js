@@ -9,12 +9,16 @@ function startTimer(minutes) {
     let minuteDisplay = minutes - 1;
     let timer = setInterval(() => {
         seconds--;
-        if (seconds % 60 == 0) {
+
+        if ((seconds % 60 == 0) && seconds != 0) {
             minuteDisplay--;
         }
+        
         document.querySelector("#time").textContent = minuteDisplay + ":" + (seconds % 60); 
+
         if (seconds <= 0) {
             clearInterval(timer);
+
             if (!isBreakTime) {
                 console.log("You get in here");
                 isBreakTime = true;
@@ -25,6 +29,7 @@ function startTimer(minutes) {
                 startTimer(workTime);
             }
         }
+
     }, 1000)
 }
 
