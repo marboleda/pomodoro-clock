@@ -1,7 +1,9 @@
-let workTime = 25;
+let workTime = 23;
 let breakTime = 5;
 const stopButton = document.querySelector("#stop-button");
 const startButton = document.querySelector("#start-button");
+const resetButton = document.querySelector("#reset-button");
+//const increaseSessionButton = document.querySelector("#increase-session-minutes");
 const timeDisplay = document.querySelector("#time");
 let isBreakTime = false;
 let isPaused = false;
@@ -11,9 +13,9 @@ let currentSeconds;
 
 function startTimer(minutes, seconds) {
     let totalSeconds = minutes * 60 + seconds;
-    let minutesDisplay = minutes;
+    let minuteDisplay = minutes;
 
-    if (minutes != 0) {
+    if (seconds == 0) {
         minuteDisplay = minutes - 1;
     }
     
@@ -55,6 +57,14 @@ startButton.addEventListener("click", function(e) {
         isPaused = false;
         startTimer(currentMinutes, currentSeconds);
     }
-})
+});
 
-startTimer(1, 0);
+
+resetButton.addEventListener("click", function(e) {
+    isPaused = false;
+    clearInterval(timer);
+    startTimer(workTime, 0);
+});
+
+
+startTimer(3, 0);
