@@ -38,11 +38,11 @@ function startTimer(minutes, seconds) {
 
             if (!isBreakTime) {
                 isBreakTime = true;
-                startTimer(breakTime);
+                startTimer(breakTime, 0);
             }
             else {
                 isBreakTime = false;
-                startTimer(workTime);
+                startTimer(workTime, 0);
             }
         }
 
