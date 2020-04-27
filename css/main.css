@@ -58,6 +58,10 @@ button {
 #time {
     flex-basis: 50%;
     color: #e4d6a7;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 2rem;
 }
 
 h3, #time {
