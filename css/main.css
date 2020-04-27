@@ -1,0 +1,65 @@
+body {
+    background-color: #1C110A;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+    color: #e4d6a7;
+}
+
+h3 {
+    margin-right: 10px;
+    width: 35%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+button {
+    margin: 2px 5px;
+}
+
+#clock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50vw;
+    height: 30vw;
+    margin: 0 auto;
+    border: 5px solid #B30000;
+    background-color: #e9b44c;
+}
+
+#operations {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+#session, #break {
+    display: flex;
+}
+
+#session-time, #break-time, h3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#session-buttons, #break-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#settings {
+    flex-basis: 50%;
+}
+
+#time {
+    flex-basis: 50%;
+    color: #e4d6a7;
+}
+
+h3, #time {
+    color: #255C99;
+}
