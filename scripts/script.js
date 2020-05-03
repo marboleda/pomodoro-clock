@@ -19,6 +19,7 @@ let currentSeconds;
 function startTimer(minutes, seconds) {
     let totalSeconds = minutes * 60 + seconds;
     let minuteDisplay = minutes;
+    let secondDisplay;
 
     if (seconds == 0) {
         minuteDisplay = minutes - 1;
@@ -31,7 +32,9 @@ function startTimer(minutes, seconds) {
             minuteDisplay--;
         }
 
-        timeDisplay.textContent = minuteDisplay + ":" + (totalSeconds % 60); 
+        secondDisplay = totalSeconds % 60;
+        timeDisplay.textContent = minuteDisplay + ":" + 
+                                 ((secondDisplay < 10) ? ("0" + secondDisplay) : secondDisplay); 
 
         if (totalSeconds <= 0) {
             clearInterval(timer);
