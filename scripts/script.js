@@ -1,15 +1,15 @@
 let workTime = 25;
 let breakTime = 5;
-const stopButton = document.querySelector("#stop-button");
-const startButton = document.querySelector("#start-button");
-const resetButton = document.querySelector("#reset-button");
-const increaseSessionButton = document.querySelector("#increase-session-minutes");
-const decreaseSessionButton = document.querySelector("#decrease-session-minutes");
-const increaseBreakButton = document.querySelector("#increase-break-minutes");
-const decreaseBreakButton = document.querySelector("#decrease-break-minutes");
-const sessionDisplay = document.querySelector("#session-time");
-const breakDisplay = document.querySelector("#break-time");
-const timeDisplay = document.querySelector("#time");
+const stopButton = document.querySelector('#stop-button');
+const startButton = document.querySelector('#start-button');
+const resetButton = document.querySelector('#reset-button');
+const increaseSessionButton = document.querySelector('#increase-session-minutes');
+const decreaseSessionButton = document.querySelector('#decrease-session-minutes');
+const increaseBreakButton = document.querySelector('#increase-break-minutes');
+const decreaseBreakButton = document.querySelector('#decrease-break-minutes');
+const sessionDisplay = document.querySelector('#session-time');
+const breakDisplay = document.querySelector('#break-time');
+const timeDisplay = document.querySelector('#time');
 let isBreakTime = false;
 let isPaused = false;
 let timer;
@@ -33,8 +33,8 @@ function startTimer(minutes, seconds) {
         }
 
         secondDisplay = totalSeconds % 60;
-        timeDisplay.textContent = minuteDisplay + ":" + 
-                                 ((secondDisplay < 10) ? ("0" + secondDisplay) : secondDisplay); 
+        timeDisplay.textContent = minuteDisplay + ':' + 
+                                 ((secondDisplay < 10) ? ('0' + secondDisplay) : secondDisplay); 
 
         if (totalSeconds <= 0) {
             clearInterval(timer);
@@ -52,15 +52,15 @@ function startTimer(minutes, seconds) {
     }, 1000)
 }
 
-stopButton.addEventListener("click", function(e) {
+stopButton.addEventListener('click', function(e) {
     clearInterval(timer);
-    let minutesAndSeconds = timeDisplay.textContent.split(":");
+    let minutesAndSeconds = timeDisplay.textContent.split(':');
     currentMinutes = minutesAndSeconds[0];
     currentSeconds = minutesAndSeconds[1];
     isPaused = true;
 });
 
-startButton.addEventListener("click", function(e) {
+startButton.addEventListener('click', function(e) {
     if (isPaused) {
         isPaused = false;
         startTimer(currentMinutes, currentSeconds);
@@ -68,30 +68,30 @@ startButton.addEventListener("click", function(e) {
 });
 
 
-resetButton.addEventListener("click", function(e) {
+resetButton.addEventListener('click', function(e) {
     isPaused = false;
     clearInterval(timer);
     startTimer(workTime, 0);
 });
 
-increaseSessionButton.addEventListener("click", function(e) {
+increaseSessionButton.addEventListener('click', function(e) {
     workTime++;
     sessionDisplay.textContent = workTime;
 });
 
-decreaseSessionButton.addEventListener("click", function(e) {
+decreaseSessionButton.addEventListener('click', function(e) {
     if (workTime > 1) {
         workTime--;
         sessionDisplay.textContent = workTime;
     }
 });
 
-increaseBreakButton.addEventListener("click", function(e) {
+increaseBreakButton.addEventListener('click', function(e) {
     breakTime++;
     breakDisplay.textContent = breakTime;
 });
 
-decreaseBreakButton.addEventListener("click", function(e) {
+decreaseBreakButton.addEventListener('click', function(e) {
     if (breakTime > 1) {
         breakTime--;
         breakDisplay.textContent = breakTime;
