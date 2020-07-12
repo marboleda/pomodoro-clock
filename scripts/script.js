@@ -53,7 +53,7 @@ function startTimer(minutes, seconds) {
 
 stopButton.addEventListener('click', () => {
   clearInterval(timer);
-  let minutesAndSeconds = timeDisplay.textContent.split(':');
+  const minutesAndSeconds = timeDisplay.textContent.split(':');
   currentMinutes = minutesAndSeconds[0];
   currentSeconds = minutesAndSeconds[1];
   isPaused = true;
