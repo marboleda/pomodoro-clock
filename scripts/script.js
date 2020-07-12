@@ -17,85 +17,85 @@ let currentMinutes;
 let currentSeconds;
 
 function startTimer(minutes, seconds) {
-    let totalSeconds = minutes * 60 + seconds;
-    let minuteDisplay = minutes;
-    let secondDisplay;
+  let totalSeconds = minutes * 60 + seconds;
+  let minuteDisplay = minutes;
+  let secondDisplay;
 
-    if (seconds == 0) {
-        minuteDisplay = minutes - 1;
-    }
+  if (seconds == 0) {
+    minuteDisplay = minutes - 1;
+  }
     
-    timer = setInterval(() => {
-        totalSeconds--;
+  timer = setInterval(() => {
+    totalSeconds--;
 
-        if ((totalSeconds % 60 == 0) && totalSeconds != 0) {
-            minuteDisplay--;
-        }
+    if ((totalSeconds % 60 == 0) && totalSeconds != 0) {
+      minuteDisplay--;
+    }
 
-        secondDisplay = totalSeconds % 60;
-        timeDisplay.textContent = minuteDisplay + ':' + 
+    secondDisplay = totalSeconds % 60;
+    timeDisplay.textContent = minuteDisplay + ':' + 
                                  ((secondDisplay < 10) ? ('0' + secondDisplay) : secondDisplay); 
 
-        if (totalSeconds <= 0) {
-            clearInterval(timer);
+    if (totalSeconds <= 0) {
+      clearInterval(timer);
 
-            if (!isBreakTime) {
-                isBreakTime = true;
-                startTimer(breakTime, 0);
-            }
-            else {
-                isBreakTime = false;
-                startTimer(workTime, 0);
-            }
-        }
+      if (!isBreakTime) {
+        isBreakTime = true;
+        startTimer(breakTime, 0);
+      }
+      else {
+        isBreakTime = false;
+        startTimer(workTime, 0);
+      }
+    }
 
-    }, 1000)
+  }, 1000)
 }
 
 stopButton.addEventListener('click', function(e) {
-    clearInterval(timer);
-    let minutesAndSeconds = timeDisplay.textContent.split(':');
-    currentMinutes = minutesAndSeconds[0];
-    currentSeconds = minutesAndSeconds[1];
-    isPaused = true;
+  clearInterval(timer);
+  let minutesAndSeconds = timeDisplay.textContent.split(':');
+  currentMinutes = minutesAndSeconds[0];
+  currentSeconds = minutesAndSeconds[1];
+  isPaused = true;
 });
 
 startButton.addEventListener('click', function(e) {
-    if (isPaused) {
-        isPaused = false;
-        startTimer(currentMinutes, currentSeconds);
-    }
+  if (isPaused) {
+    isPaused = false;
+    startTimer(currentMinutes, currentSeconds);
+  }
 });
 
 
 resetButton.addEventListener('click', function(e) {
-    isPaused = false;
-    clearInterval(timer);
-    startTimer(workTime, 0);
+  isPaused = false;
+  clearInterval(timer);
+  startTimer(workTime, 0);
 });
 
 increaseSessionButton.addEventListener('click', function(e) {
-    workTime++;
-    sessionDisplay.textContent = workTime;
+  workTime++;
+  sessionDisplay.textContent = workTime;
 });
 
 decreaseSessionButton.addEventListener('click', function(e) {
-    if (workTime > 1) {
-        workTime--;
-        sessionDisplay.textContent = workTime;
-    }
+  if (workTime > 1) {
+    workTime--;
+    sessionDisplay.textContent = workTime;
+  }
 });
 
 increaseBreakButton.addEventListener('click', function(e) {
-    breakTime++;
-    breakDisplay.textContent = breakTime;
+  breakTime++;
+  breakDisplay.textContent = breakTime;
 });
 
 decreaseBreakButton.addEventListener('click', function(e) {
-    if (breakTime > 1) {
-        breakTime--;
-        breakDisplay.textContent = breakTime;
-    }
+  if (breakTime > 1) {
+    breakTime--;
+    breakDisplay.textContent = breakTime;
+  }
 })
 
 startTimer(25, 0);
