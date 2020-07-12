@@ -24,7 +24,7 @@ function startTimer(minutes, seconds) {
   if (seconds == 0) {
     minuteDisplay = minutes - 1;
   }
-    
+
   timer = setInterval(() => {
     totalSeconds--;
 
@@ -33,8 +33,8 @@ function startTimer(minutes, seconds) {
     }
 
     secondDisplay = totalSeconds % 60;
-    timeDisplay.textContent = minuteDisplay + ':' + 
-                                 ((secondDisplay < 10) ? ('0' + secondDisplay) : secondDisplay); 
+    timeDisplay.textContent = `${minuteDisplay}:${
+      (secondDisplay < 10) ? (`0${secondDisplay}`) : secondDisplay}`;
 
     if (totalSeconds <= 0) {
       clearInterval(timer);
