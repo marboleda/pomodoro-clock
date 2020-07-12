@@ -48,11 +48,10 @@ function startTimer(minutes, seconds) {
         startTimer(workTime, 0);
       }
     }
-
-  }, 1000)
+  }, 1000);
 }
 
-stopButton.addEventListener('click', function(e) {
+stopButton.addEventListener('click', () => {
   clearInterval(timer);
   let minutesAndSeconds = timeDisplay.textContent.split(':');
   currentMinutes = minutesAndSeconds[0];
@@ -60,7 +59,7 @@ stopButton.addEventListener('click', function(e) {
   isPaused = true;
 });
 
-startButton.addEventListener('click', function(e) {
+startButton.addEventListener('click', () => {
   if (isPaused) {
     isPaused = false;
     startTimer(currentMinutes, currentSeconds);
@@ -68,30 +67,30 @@ startButton.addEventListener('click', function(e) {
 });
 
 
-resetButton.addEventListener('click', function(e) {
+resetButton.addEventListener('click', () => {
   isPaused = false;
   clearInterval(timer);
   startTimer(workTime, 0);
 });
 
-increaseSessionButton.addEventListener('click', function(e) {
+increaseSessionButton.addEventListener('click', () => {
   workTime++;
   sessionDisplay.textContent = workTime;
 });
 
-decreaseSessionButton.addEventListener('click', function(e) {
+decreaseSessionButton.addEventListener('click', () => {
   if (workTime > 1) {
     workTime--;
     sessionDisplay.textContent = workTime;
   }
 });
 
-increaseBreakButton.addEventListener('click', function(e) {
+increaseBreakButton.addEventListener('click', () => {
   breakTime++;
   breakDisplay.textContent = breakTime;
 });
 
-decreaseBreakButton.addEventListener('click', function(e) {
+decreaseBreakButton.addEventListener('click', () => {
   if (breakTime > 1) {
     breakTime--;
     breakDisplay.textContent = breakTime;
