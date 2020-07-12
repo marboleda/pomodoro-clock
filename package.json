@@ -1,0 +1,24 @@
+{
+  "name": "pomodoro-clock",
+  "version": "1.0.0",
+  "description": "This is a Pomodoro Clock. A timer that makes use of the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) to increase productivity.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marboleda/pomodoro-clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marboleda/pomodoro-clock/issues"
+  },
+  "homepage": "https://github.com/marboleda/pomodoro-clock#readme",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
