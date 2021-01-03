@@ -1,5 +1,5 @@
 body {
-    background-color: #808080;
+    background-color: #000000;
 }
 
 h1 {
@@ -26,8 +26,8 @@ button {
     width: 50vw;
     height: 30vw;
     margin: 0 auto;
-    border: 5px groove #255C99;
-    background-color: #4abdff;
+    border: 1px groove #ffffff;
+    background-color: #b21807;
 }
 
 #operations {
@@ -38,7 +38,7 @@ button {
 
 #session, #break {
     display: flex;
-    margin-left: 10px;
+    margin-left: 20%;
 }
 
 #session-time, #break-time, h3 {
@@ -64,6 +64,6 @@ button {
     font-size: 2rem;
 }
 
-h1, h3, #time {
-    color: #255C99;
+h1, h3, #time, #session-time, #break-time {
+    color: #ffff00;
 }
